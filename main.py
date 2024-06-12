@@ -57,14 +57,6 @@ if uploaded_file is not None:
             y_axis = 'Count'
         elif plot_type == 'Box Plot':
             sns.boxplot(x=df[x_axis], y=df[y_axis], ax=ax)
-        elif plot_type == 'Violin Plot':
-            sns.violinplot(x=df[x_axis], y=df[y_axis], ax=ax)
-        elif plot_type == 'Pair Plot':
-            sns.pairplot(df, ax=ax)
-        elif plot_type == 'Heatmap':
-            sns.heatmap(df.corr(), ax=ax)
-        elif plot_type == 'KDE Plot':
-            sns.kdeplot(df[x_axis], ax=ax)
         elif plot_type == 'Joint Plot':
             sns.jointplot(x=df[x_axis], y=df[y_axis], ax=ax)
         elif plot_type == 'Swarm Plot':
@@ -73,6 +65,9 @@ if uploaded_file is not None:
             sns.pointplot(x=df[x_axis], y=df[y_axis], ax=ax)
         elif plot_type == 'Strip Plot':
             sns.stripplot(x=df[x_axis], y=df[y_axis], ax=ax)
+        elif plot_type == 'bar':
+            sns.barplot(x=df[x_axis], y=df[y_axis], ax=ax)
+            
 
         # Adjust label sizes
         ax.tick_params(axis='x', labelsize=10)  # Adjust x-axis label size
